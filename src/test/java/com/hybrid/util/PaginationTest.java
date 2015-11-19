@@ -54,7 +54,7 @@ public class PaginationTest {
 				System.out.print("      ");
 
 			
-			System.out.println();
+			System.out.println("");
 		}
 		
 		
