@@ -21,9 +21,7 @@
 		  from city
 		 order by countrycode asc, name asc 
 		 limit #{start}, #{length} 
-    </select>
-    
-    
+    </select>       
     
     <select id="selectByCountryCode" parameterType="string" resultType="com.hybrid.model.City">
         select id,
