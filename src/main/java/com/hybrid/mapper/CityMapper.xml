@@ -7,37 +7,55 @@
     <select id="selectAll" resultType="com.hybrid.model.City">
         select id,
 			   name,
-			   countrycode,
+			   countryCode,
 			   district,
 			   population
 		  from city
     </select>
-    <select id="selectPage" parameterType="com.hybrid.util.Pagination" resultType="com.hybrid.model.City">
+    <select id="selectPage" 
+    		parameterType="com.hybrid.util.Pagination" 
+    		resultType="com.hybrid.model.City"
+    		databaseId="mysql">
         select id,
 			   name,
-			   countrycode,
+			   countryCode,
 			   district,
 			   population
 		  from city
-		 order by countrycode asc, name asc 
+		 order by countryCode asc, name asc 
 		 limit #{start}, #{length} 
     </select>       
+    
+    <select id="selectPage" 
+		    parameterType="com.hybrid.util.Pagination" 
+		    resultType="com.hybrid.model.City"
+		    databaseId="oracle">
+       select outer.*
+			    from ( select rownum r, inner.*
+			    				from (select *
+			    				            from city 
+			    				                order by countryCode asc, name asc
+			    				        ) inner 
+			              ) outer      
+			    where outer.r &gt;= #{firstItem}
+			       and outer.r &lt;= #{lastItem}
+    </select> 
     
     <select id="selectByCountryCode" parameterType="string" resultType="com.hybrid.model.City">
         select id,
 			   name,
-			   countrycode,
+			   countryCode,
 			   district,
 			   population
 		  from city
-		 where countrycode = #{countryCode}
+		 where countryCode = #{countryCode}
     </select>
     <insert id="insert" parameterType="com.hybrid.model.City">
         insert into city
 		(
 			id, 
 			name, 
-			countrycode, 
+			countryCode, 
 			district, 
 			population
 		)
@@ -51,6 +69,9 @@
 		)
     </insert>
     
+    <delete id="deleteAll">
+    	delete from city
+    </delete>
     
     
     

@@ -2,6 +2,7 @@
 
 select * from dept;
 
+
 select * from emp;
 
 select *
@@ -53,7 +54,9 @@ delete from member
 -- city
 -- 
 drop table city
- 
+
+select * from CITY
+
 create table city (
   id			numeric(11),
   name			char(50),
@@ -64,6 +67,18 @@ create table city (
 ) 
 
 select count(*) from city
+
+select rownum, c.*
+       from city c
+--           where rownum >= 11 
+--               and rownum <= 20
+      order by countrycode asc, name asc
+       
+       
+select * 
+		from CITY
+		order by countrycode asc, name asc
+
 select * from city where countrycode='KOR'
 
 delete from city
@@ -115,9 +130,23 @@ select d.deptno as dept_deptno,
 delete from dept where deptno = 61    
 
 
-
+select outer.*
+    from ( select rownum r, inner.*
+    				from (select *
+    				            from city 
+    				                order by countrycode asc, name asc
+    				        ) inner 
+              ) outer      
+    where outer.r >= 21
+       and outer.r <= 30
  
-
+       
+select rownum, c.*
+       from city c
+--           where rownum >= 11 
+--               and rownum <= 20
+      order by countrycode asc, name asc
+       
 
 
 

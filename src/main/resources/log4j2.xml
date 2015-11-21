@@ -13,11 +13,18 @@
 	</Appenders>
  
 	<!-- Logger 설정 -->
+   <!-- TRACE(전체), DEBUG, INFO, WARN, ERROR, FAFAL(심각상황)   선택레벨오른쪽것만 출력,수준-->
 	<Loggers>
 		<Root level="INFO">
 			<AppenderRef ref="console"/>
 			<AppenderRef ref="MyFile"/>
 		</Root>
+		
+		<Logger name="org.springframework.jdbc.datasource" level="DEBUG">			
+		</Logger>
+		
+		<Logger name="org.hybrid.mapper" level="DEBUG">			
+		</Logger>
 	</Loggers>
  
 </Configuration>
