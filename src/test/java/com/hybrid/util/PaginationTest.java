@@ -75,7 +75,7 @@ public class PaginationTest {
 						+ ", firstItem=" + paging.getFirstItem()
 						+ ", lastItem=" + paging.getLastItem()
 						+ ", pageNo=" + paging.getPageNo()
-						+ ", fistPage=" + paging.getFirstPage()
+						+ ", firstPage=" + paging.getFirstPage()
 						+ ", lastPage=" + paging.getLastPage()
 						+ ", lastGroup=" + paging.isLastGroup();
 			System.out.println(line);

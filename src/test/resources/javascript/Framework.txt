@@ -1,0 +1,65 @@
+
+
+#
+# javascript Framework
+#
+# w3school.com
+#
+
+Cross-Browser 대응 (브라우저별 다른 문제 해결)
+
+
+1. jQuery => jQuery Mobile
+
+
+2. Extjs(html부분이 거의 없다) => Sench Touch
+
+-------------------------------------------------------------
+
+3. Angularjs => MVC Framework
+     화면전환없이 데이터변경.  Single page Applications(SPAs)
+     현재까지는 Round trip 방식이었다.
+
+4. Bootstrap => RWD(반응형웹)
+
+--------------------------------------------------------------
+#
+# URL 매핑
+#
+http://localhost:8080/Employee/WEB-INF/css/css.html
+http://localhost:8080/Employee/css/css.html
+
+
+1. 정확한 매핑
+		/xxx
+		/city
+		/dept/register
+2. 경로패핑
+		/xxx/yyy/*
+3. 확장자매핑
+		*.jsp   
+		*.do
+4. default매핑
+		/
+    유연성때문에 스프링에서는 이것을 사용한다.
+    서버의 web.xml 106fkdls
+    1) 디버그밸류를 숫자1로 바꾼다
+    2) 리스팅밸류를 true로하되 운영중에는 false로 한다
+
+5. 위의 우선순위로 찾았는데 모두 없는 경우 404에러 Not Found		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

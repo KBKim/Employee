@@ -12,6 +12,7 @@
 		<config>src/test/java/com/hybrid/bean/beans.xml</config>
 	</configs>
 	<autoconfigs>
+		<config>src/main/resources/spring/beans_service.xml</config>
 	</autoconfigs>
 	<configSets>
 	</configSets>

@@ -34,9 +34,4 @@
 	<property name="mapperInterface" value="com.hybrid.mapper.CityMapper"/>
 </bean>
 
-
-
-
-
-
 </beans>

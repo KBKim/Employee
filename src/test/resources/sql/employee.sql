@@ -108,21 +108,21 @@ values
 select * from dept
 select * from emp
 
-select d.deptno as dept_deptno,
-	   d.dname  as dept_dname,
-	   d.loc    as dept_loc,
-	   e.empno  as emp_empno,
-	   e.ename  as emp_ename,
-	   e.job	as emp_job
+select  d.deptno  as dept_deptno,
+		   d.dname  as dept_dname,
+		   d.loc       as dept_loc,
+		   e.empno  as emp_empno,
+		   e.ename  as emp_ename,
+		   e.job       as emp_job
   from dept d inner join emp e
     on d.deptno = e.deptno
     
-select d.deptno as dept_deptno,
-	   d.dname  as dept_dname,
-	   d.loc    as dept_loc,
-	   e.empno  as emp_empno,
-	   e.ename  as emp_ename,
-	   e.job	as emp_job
+select  d.deptno  as dept_deptno,
+		   d.dname  as dept_dname,
+		   d.loc       as dept_loc,
+		   e.empno  as emp_empno,
+		   e.ename  as emp_ename,
+		   e.job	    as emp_job
   from dept d left outer join emp e 
     on d.deptno = e.deptno
     
@@ -147,6 +147,31 @@ select rownum, c.*
 --               and rownum <= 20
       order by countrycode asc, name asc
        
+
+      <!-- Country -->
+      
+select * from country
+
+drop table country;
+      
+create table country (
+  code 					 char(3) ,
+ name					 char(52),
+ continent 			     char(50),
+ region 				     char(26),
+ surfacearea  	     numeric(10,2),
+ indepyear     	     numeric(6),
+ population 	         numeric(11),
+ lifeexpectancy     numeric(3,1),
+ gnp                     numeric(10,2),
+ gnpold                numeric(10,2),
+ localname          char(45),
+ governmentform char(45),
+ headofstate       char(60),
+ capital              numeric(11),
+ code2               char(2),
+ constraint pk_country_code primary key (code)
+) 
 
 
 
