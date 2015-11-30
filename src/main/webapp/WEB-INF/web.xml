@@ -48,7 +48,7 @@
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
-				classpath:spring/beans_dao.xml
+				classpath:spring/beans_dao2.xml
 				classpath:spring/beans_service.xml
 		</param-value>
 	</context-param>
@@ -57,8 +57,6 @@
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
-  
-  
   
   
 </web-app>

@@ -7,12 +7,13 @@
 	</configSuffixes>
 	<enableImports><![CDATA[false]]></enableImports>
 	<configs>
-		<config>src/main/resources/spring/beans_dao.xml</config>
 		<config>src/test/resources/spring/beans_mysql.xml</config>
 		<config>src/test/java/com/hybrid/bean/beans.xml</config>
+		<config>src/main/webapp/WEB-INF/view/city/beans_service.xml</config>
 	</configs>
 	<autoconfigs>
-		<config>src/main/resources/spring/beans_service.xml</config>
+		<config>src/main/resources/spring/beans_mvc.xml</config>
+		<config>src/main/resources/spring/beans_dao2.xml</config>
 	</autoconfigs>
 	<configSets>
 	</configSets>
