@@ -12,6 +12,7 @@ import com.hybrid.util.Pagination;
 public class CityPageService {
 	CityDao cityDao;
 
+	
 	public void setCityDao(CityDao dao) {
 		this.cityDao = dao;
 	}

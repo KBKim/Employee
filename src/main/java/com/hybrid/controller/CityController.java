@@ -18,29 +18,48 @@ import com.hybrid.service.CityListService;
 import com.hybrid.service.CityPageService;
 import com.hybrid.util.Pagination;
 
-//@Controller
+@Controller
 @RequestMapping("/city")      //CityContoller와 매핑, driven찾음
 public class CityController {
 	static Log log = LogFactory.getLog(CityController.class);
 
+	@Autowired                                //필드주입
 	CityListService cityListService;	
 
+	@Autowired
 	CityPageService cityPageService;
 	
-	public void setCityListService(CityListService service) {
-		this.cityListService = service;
-	}
-	public void setCityPageService(CityPageService service) {
-		this.cityPageService = service;
-	}
+//	public void setCityListService(CityListService service) {
+//		this.cityListService = service;
+//	}
+//	public void setCityPageService(CityPageService service) {
+//		this.cityPageService = service;
+//	}
 		
-	@RequestMapping("/city.html")    //  /city/dept.html 매핑
-	public String getView() {                  //매핑이 맞으면 이것이 실행됨
-		log.info("getView()...");
+	@RequestMapping("/main.html")    //  /city/dept.html 매핑
+	public String getMainView() {                  //매핑이 맞으면 이것이 실행됨
+		log.info("getMainView()...");
 		
-		return "city/city";    //이것은 WEB-INF/view/city/city.jsp를 표현한것이다
+		return "city/main";    //이것은 WEB-INF/view/city/main.jsp를 표현한것이다
 		
 	}
+	
+	@RequestMapping("/list.html")    //  /city/list.html 매핑
+	public String getListView() {                  //매핑이 맞으면 이것이 실행됨
+		log.info("getListView()...");
+		
+		return "city/list";    //이것은 WEB-INF/view/city/main.jsp를 표현한것이다
+		
+	}
+	
+	@RequestMapping("/detail.html")    //  /city/list.html 매핑
+	public String getDetailView() {                  //매핑이 맞으면 이것이 실행됨
+		log.info("getDetailView()...");
+		
+		return "city/detail";    //이것은 WEB-INF/view/city/main.jsp를 표현한것이다		
+	}
+	
+	
 	
 	@RequestMapping(value={"", "/"})       
 	@ResponseBody                 //DATA로 응답하는것
