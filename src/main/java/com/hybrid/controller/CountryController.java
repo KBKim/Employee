@@ -23,9 +23,9 @@ import com.hybrid.service.CityRegisterService;
 import com.hybrid.util.Pagination;
 
 @Controller
-@RequestMapping("/city")      //CityContoller와 매핑, driven찾음
-public class CityController {
-	static Log log = LogFactory.getLog(CityController.class);
+@RequestMapping("/country")      //CityContoller와 매핑, driven찾음
+public class CountryController {
+	static Log log = LogFactory.getLog(CountryController.class);
 
 	@Autowired                                //필드주입
 	CityListService cityListService;	
@@ -43,7 +43,7 @@ public class CityController {
 	public String getMainView() {                 
 		log.info("getMainView()...");
 		
-		return "city/main";   
+		return "country/main";   
 	}
 	/*
 	 * list.html
@@ -52,7 +52,7 @@ public class CityController {
 	public String getListView() {                 
 		log.info("getListView()...");
 		
-		return "city/list";    
+		return "country/list";    
 	}
 	/*
 	 * detail.html
@@ -61,7 +61,7 @@ public class CityController {
 	public String getDetailView() {                 
 		log.info("getDetailView()...");
 		
-		return "city/detail";   	
+		return "country/detail";   	
 	}
 	/*
 	 * append.html
@@ -70,7 +70,7 @@ public class CityController {
 	public String getAppendView() {                 
 		log.info("getAppendView()...");
 		
-		return "city/append";   	
+		return "country/append";   	
 	}
 	/*
 	 * modify.html
@@ -79,7 +79,7 @@ public class CityController {
 	public String getModifyView() {                 
 		log.info("getModifyView()...");
 		
-		return "city/modify";   	
+		return "country/modify";   	
 	}
 	/*
 	 * delete.html
@@ -88,7 +88,7 @@ public class CityController {
 	public String getDeleteView() {                 
 		log.info("getDeleteView()...");
 		
-		return "city/delete";   	
+		return "country/delete";   	
 	}
 	
 	/*

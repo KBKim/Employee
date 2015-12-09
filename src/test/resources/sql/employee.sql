@@ -59,10 +59,10 @@ select * from CITY
 
 create table city (
   id			numeric(11),
-  name			char(50),
-  countrycode	char(3),
-  district		char(30),
-  population	numeric(11),
+  name			char(50) not null,
+  countrycode	char(3) not null,
+  district		char(30) not null,
+  population	numeric(11) not null,
   constraint city_pk_id primary key (id)
 ) 
 
@@ -83,9 +83,14 @@ select * from city where countrycode='KOR'
 
 delete from city
 
+drop sequence city_id_generator;
+create sequence city_id_generator start with 4090;
+select city_id_generator.nextVal from dual;
+
+
 insert into city
 (
-	id, 
+	id,
 	name, 
 	countrycode, 
 	district, 
@@ -93,7 +98,7 @@ insert into city
 )
 values
 (
-	1,
+	city_id_generator.nextVal,
 	'seoul',
 	'KOR',
 	'Asia',

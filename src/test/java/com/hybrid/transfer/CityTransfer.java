@@ -21,7 +21,7 @@ public class CityTransfer {
 		
 		GenericXmlApplicationContext ctx=null;
 		ctx = new GenericXmlApplicationContext("spring/beans_mysql.xml", 
-										"spring/beans_oracle.xml");          
+										                               "spring/beans_oracle.xml");          
 		
 		//mySql에서 oracle로 복사
 
@@ -48,6 +48,9 @@ public class CityTransfer {
 			public void accept(City t) {
 				System.out.print(".");
 				System.out.flush();
+				if(t.getDistrict().equals("")) {
+					t.setDistrict(" ");
+				}
 				int rtn = oracleCityMapper.insert(t);
 				log.info("rtn = " + rtn);
 			}
